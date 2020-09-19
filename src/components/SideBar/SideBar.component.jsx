@@ -19,7 +19,7 @@ const SideBar = ({ id }) => {
   };
 
   return (
-    <div style={{ width: "250px" }} className="d-flex flex-column">
+    <div style={{ width: "100%" }} className="d-flex flex-column">
       <Tab.Container activeKey={activeKey} onSelect={setActiveKey}>
         <Nav variant="tabs" className="justify-content-center">
           <Nav.Item>
@@ -38,7 +38,7 @@ const SideBar = ({ id }) => {
           </Tab.Pane>
         </Tab.Content>
         <div className="p-2 border-top border-right small">
-          Your Id: <span className="text-muted">{id}</span>
+          Your Number: <span className="text-muted">{id}</span>
         </div>
         <Button onClick={() => setModalOpen(true)} className="rounded-0">
           NEW {conversationsOpen ? "Conversation" : "Contact"}

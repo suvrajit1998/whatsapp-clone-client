@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 
 import { Container, Form, Button } from "react-bootstrap";
 
-import { v4 as uuidV4 } from "uuid";
+import { Link } from "react-router-dom";
 
 const Login = ({ onIdSubmit }) => {
   const idRef = useRef();
@@ -14,7 +14,7 @@ const Login = ({ onIdSubmit }) => {
   };
 
   const createNewId = () => {
-    onIdSubmit(uuidV4());
+    onIdSubmit(idRef.current.value);
   };
 
   return (
@@ -30,7 +30,12 @@ const Login = ({ onIdSubmit }) => {
         <Button type="submit" className="mr-2">
           Login
         </Button>
-        <Button onClick={createNewId} variant="secondary">
+        <Button
+          onClick={createNewId}
+          as={Link}
+          to="/sidebar"
+          variant="secondary"
+        >
           Create a new Id
         </Button>
       </Form>
